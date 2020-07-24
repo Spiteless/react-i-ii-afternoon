@@ -21,6 +21,9 @@ class App extends React.Component {
     if (["left","right"].includes(e.target.name)) {
       this.changePage(e.target.value)
     }
+    if ( "delete" === e.target.name) {
+      this.deletePerson()
+    }
     //e.target is the element that the event call came from
     //e.target.name is the name of that target element
     //[e.target.name]: e.target.value means:
@@ -36,13 +39,21 @@ class App extends React.Component {
     let length = this.state.data.length
     page += current
     if (page == 0) {
-      console.log("page=0");page = length}
+      page = length}
     if (page > length) {
-      console.log("page>length")
       page = 1}
-    console.log("page:",page, "currentPage",this.state.currentPage)
     this.setState({
       currentPage: page
+    })
+  }
+
+  deletePerson(){
+    let index = this.state.currentPage - 1
+    let newData = this.state.data.map( (el) => {
+      return (el !== this.state.data[index]) ? el : null})
+    newData = newData.filter( (el) => (el !== null) ? true : false)
+    this.setState({
+      data: newData
     })
   }
 

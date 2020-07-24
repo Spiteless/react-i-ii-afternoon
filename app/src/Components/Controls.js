@@ -28,9 +28,15 @@ class Contorls extends React.Component{
                         value={-1}> {this.state.previous} </button>
                     <div className="middle">
                         <div className="container-button">
-                            <button className="btn-ctrl"> Edit </button>
-                            <button className="btn-ctrl"> Delete </button>
-                            <button className="btn-ctrl"> New </button>
+                            <button className="btn-ctrl"
+                            name="edit"
+                            onClick={ handleChange }> Edit </button>
+                            <button className="btn-ctrl"
+                            name="delete"
+                            onClick={ handleChange }> Delete </button>
+                            <button className="btn-ctrl"
+                            name="new"
+                            onClick={ handleChange }> New </button>
                         </div>
                     </div>
                     <button
