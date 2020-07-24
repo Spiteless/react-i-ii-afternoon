@@ -13,10 +13,6 @@ class Display extends React.Component{
 
     render(){
         let person = this.props.data
-        console.log(this.props.data)
-        // let movies = person.favoriteMovies.map( movie => {
-        //     <li> {movie} </li>
-        // })
 
         let movies = person.favoriteMovies.map(el => (
                 <li>{el}</li>

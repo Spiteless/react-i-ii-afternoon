@@ -137,7 +137,7 @@ body{
   display: inline-block;
 }
 
-button{
+.btn-ctrl{
   background-color: #34a5da;
   color: white;
   border: none;
@@ -149,6 +149,9 @@ button{
 .side-button{
   color: white;
   font-weight: bold;
+  border:none;
+  background-color:transparent;
+  outline:none;
 }
 
 .nav-inner{

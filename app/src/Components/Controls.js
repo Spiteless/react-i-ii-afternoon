@@ -16,25 +16,28 @@ class Contorls extends React.Component{
     }
 
     render(){
+        let handleChange = this.props.handleChange
         return (
         <div className="contianer-controls">
             <div className="nav-bottom">
                 <div className="nav-inner">
-                    <div
+                    <button
                         className="left side-button"
+                        onClick={ handleChange }
                         name="left"
-                        > {this.state.previous} </div>
+                        value={-1}> {this.state.previous} </button>
                     <div className="middle">
                         <div className="container-button">
-                            <button> Edit </button>
-                            <button> Delete </button>
-                            <button> New </button>
+                            <button className="btn-ctrl"> Edit </button>
+                            <button className="btn-ctrl"> Delete </button>
+                            <button className="btn-ctrl"> New </button>
                         </div>
                     </div>
-                    <div
+                    <button
                         className="right side-button"
-                        onClick={ (e) => console.log(e.target.name)}
-                        name="right"> {this.state.next} </div>
+                        onClick={ handleChange }
+                        name="right"
+                        value={1}> {this.state.next} </button>
                 </div>
             </div>
         </div>
